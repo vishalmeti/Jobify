@@ -1,5 +1,5 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   HomeLayout,
   Landing,
@@ -12,45 +12,53 @@ import {
   Profile,
   Admin,
   AllJobs,
-} from './pages';
+} from "./pages";
+
+export const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem("darkTheme") === "true";
+  document.body.classList.toggle("dark-theme", isDarkTheme);
+  return isDarkTheme;
+};
+
+checkDefaultTheme();
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       {
-        index:true, //this is default page 
-        element:<Landing/>
+        index: true, //this is default page
+        element: <Landing />,
       },
       {
-        path: 'register',
+        path: "register",
         element: <Register />,
       },
       {
-        path: 'login',
+        path: "login",
         element: <Login />,
       },
       {
-        path: 'dashboard',
+        path: "dashboard",
         element: <DashboardLayout />,
         children: [
           {
             index: true,
             element: <AddJob />,
           },
-          { path: 'stats', element: <Stats /> },
+          { path: "stats", element: <Stats /> },
           {
-            path: 'all-jobs',
+            path: "all-jobs",
             element: <AllJobs />,
           },
           {
-            path: 'profile',
+            path: "profile",
             element: <Profile />,
           },
           {
-            path: 'admin',
+            path: "admin",
             element: <Admin />,
           },
         ],
@@ -58,9 +66,9 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path:'/hello',
-    element: <h1>Hello</h1>
-  }
+    path: "/hello",
+    element: <h1>Hello</h1>,
+  },
 ]);
 
 const App = () => {
