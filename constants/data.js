@@ -1,0 +1,1 @@
+export const mongoDbString = 'mongodb+srv://vishalmeti9:vishal2009@cluster0.2n506g2.mongodb.net/jobify?retryWrites=true&w=majority&appName=Cluster0'
