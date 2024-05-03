@@ -9,6 +9,7 @@ import jobRouter from './routers/jobRouter.js';
 import mongoose from "mongoose";
 // import { mongoDbString } from "./constants/data.js";
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
+import authRouter from './routers/authRouter.js';
 
 
 
@@ -19,6 +20,8 @@ app.use(morgan("dev"));
 
 //imported routes being used here as middleware
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/auth', authRouter);
+
 
 app.use('*', (req, res) => {
   res.status(404).json({ msg: 'Api not found' });
