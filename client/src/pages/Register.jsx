@@ -13,7 +13,7 @@ export const action = async ({ request }) => {
   try {
     await customFetch.post('/auth/register', data);
     toast.success('Registration successful',{
-      autoClose:800, 
+      autoClose:1000, 
       closeButton: false,
     });
     return redirect('/login');

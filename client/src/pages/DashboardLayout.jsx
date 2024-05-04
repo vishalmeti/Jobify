@@ -43,7 +43,7 @@ const Dashboard = () => {
     navigate('/');
     await customFetch.post('/auth/logout');
     toast.success('Logged Out',{
-      autoClose:800, 
+      autoClose:1000, 
       closeButton: false,
     });
   };
@@ -66,7 +66,7 @@ const Dashboard = () => {
             <Navbar />
             <div className="dashboard-page">
               {/* childern render at the place of outlet  */}
-              <Outlet user={user} />  
+              <Outlet context={{user}} />  
             </div>
           </div>
         </main>

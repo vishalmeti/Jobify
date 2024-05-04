@@ -13,7 +13,7 @@ export const action = async ({ request }) => {
   try {
     await customFetch.post('/auth/login', data);
     toast.success('Login successful',{
-      autoClose:800, 
+      autoClose:1000, 
       closeButton: false,
     });
     console.log(request)

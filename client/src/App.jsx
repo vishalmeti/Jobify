@@ -16,6 +16,7 @@ import {
 
 import {action as registerAction} from './pages/Register'
 import {action as loginAction} from './pages/Login'
+import {action as addJobAction} from './pages/AddJob'
 import {loader as dashboardLoader} from './pages/DashboardLayout'
 
 export const checkDefaultTheme = () => {
@@ -44,16 +45,17 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
-        action: loginAction
+        action: loginAction // this is a function or a method that gets triggered when user interacts with the form present in the login ie currect path page
       },
       {
         path: "dashboard",
         element: <DashboardLayout />,
-        loader:dashboardLoader,
+        loader:dashboardLoader, //this is a function that provides data when the page in the current path loads up
         children: [
           {
             index: true,
             element: <AddJob />,
+            action:addJobAction,
           },
           { path: "stats", element: <Stats /> },
           {
