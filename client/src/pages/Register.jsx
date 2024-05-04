@@ -12,10 +12,15 @@ export const action = async ({ request }) => {
   console.log(data)
   try {
     await customFetch.post('/auth/register', data);
-    toast.success('Registration successful');
+    toast.success('Registration successful',{
+      autoClose:800, 
+      closeButton: false,
+    });
     return redirect('/login');
   } catch (error) {
-    toast.error(capitalizeFirstLetter(error?.response?.data?.msg));
+    toast.error(capitalizeFirstLetter(error?.response?.data?.msg),{
+      autoClose: 3000, 
+    });
     return error;
   }
 };

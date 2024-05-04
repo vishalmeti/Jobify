@@ -5,17 +5,23 @@ import Wrapper from '../assets/wrappers/RegisterAndLoginPage';
 import { Link, Form, redirect, useNavigation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import customFetch from '../utils/customFetch';
+import { capitalizeFirstLetter } from '../helpers/helper';
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
     await customFetch.post('/auth/login', data);
-    toast.success('Login successful');
+    toast.success('Login successful',{
+      autoClose:800, 
+      closeButton: false,
+    });
     console.log(request)
     return redirect('/dashboard');
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
+    toast.error(capitalizeFirstLetter(error?.response?.data?.msg) , {
+      autoClose: 3000, 
+    });
     return error;
   }
 };
