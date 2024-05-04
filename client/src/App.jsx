@@ -23,6 +23,7 @@ import {loader as allJobsLoader} from './pages/AllJobs'
 import { loader as editJobLoader } from './pages/EditJob';
 import { action as editJobAction } from './pages/EditJob';
 import { action as deleteJobAction } from './pages/DeleteJob';
+import { action as profileAction } from './pages/Profile';
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("darkTheme") === "true";
@@ -71,6 +72,7 @@ const router = createBrowserRouter([
           {
             path: "profile",
             element: <Profile />,
+            action:profileAction
           },
           {
             path: "admin",

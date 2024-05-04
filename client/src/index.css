@@ -334,3 +334,7 @@ button:disabled {
   background: #bcf397;
   color: #3d754f;
 }
+
+.disabled{
+  cursor: not-allowed;
+}
