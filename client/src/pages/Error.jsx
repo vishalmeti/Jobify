@@ -21,6 +21,7 @@ const Error = () => {
     <Wrapper>
       <div>
         <h3>something went wrong</h3>
+        <Link to='/login'>Login Page</Link>
       </div>
     </Wrapper>
   );
