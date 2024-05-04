@@ -20,6 +20,8 @@ export const register = async (req, res) => {
   res.cookie('token', token, {
     httpOnly: true,
     expires: new Date(Date.now() + oneDay),
+    path:'/',
+    domain:'.vercel.app',
     // secure: process.env.NODE_ENV === 'production',
     secure: nodeEnv === 'production',
   });
