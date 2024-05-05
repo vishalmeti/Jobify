@@ -14,11 +14,8 @@ import userRouter from './routers/userRouter.js';
 import { mongoDbString } from './constants/data.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
-
-
-
-const cors = require('cors');
 const app = express();
 app.use(cors())
 
