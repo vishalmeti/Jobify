@@ -38,7 +38,7 @@ export const login = async (req, res) => {
     httpOnly: true,
     expires: new Date(Date.now() + oneDay),
     // path:'/',
-    // domain:'.vercel.app',
+    domain:'.onrender.com',
     // secure: process.env.NODE_ENV === 'production',
     secure: nodeEnv === 'production',
   });
