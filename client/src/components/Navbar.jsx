@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
         <div className="btn-container">
         <LogoutContainer/>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         </div>
       </div>
     </Wrapper>

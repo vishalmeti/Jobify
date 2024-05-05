@@ -22,7 +22,7 @@ const DashboardContext = createContext();
 const Dashboard = () => {
   const {user}  = useLoaderData();
   const navigate = useNavigate();
-  console.log(user)
+  // console.log(user)
   // const user = {name : 'Vishal'}
 
   const [showSidebar, setShowSidebar] = useState(false);
