@@ -20,7 +20,7 @@ const Error = () => {
   return (
     <Wrapper>
       <div>
-        <h3>something went wrong</h3>
+        <h3>Redirecting, please wait. <br/> <br/> If it takes more time, please try logging in again.</h3>
         <Link to='/login'>Login Page</Link>
       </div>
     </Wrapper>
