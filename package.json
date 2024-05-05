@@ -6,10 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
+    "dev":"nodemon server.js",
     "setup-project": "npm i && cd client && npm i",
     "server": "nodemon server.js",
-    "start": "node server.js",
     "client": "cd client && npm run dev",
     "both": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
   },
@@ -21,7 +20,6 @@
     "cloudinary": "^1.37.3",
     "concurrently": "^8.0.1",
     "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
     "datauri": "^4.1.0",
     "dayjs": "^1.11.9",
     "dotenv": "^16.0.3",
